@@ -14,5 +14,5 @@
 On créer une base de donnée simple 
 
 table : Librairie
-colonnes : { Id: [primary key] [int], Titre [varchar], DateEmprunt [date], EstEmpruntee [bool] }
+colonnes : { Id: [primary key] [INT 11] [NON NULL], Titre [VARCHAR 255] [NON NULL], DateEmprunt [DATE] [NULL], EstEmpruntee [BOOLEAN] [NULL] }
 
