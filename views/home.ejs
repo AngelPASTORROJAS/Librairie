@@ -1,0 +1,22 @@
+<%- include('header') -%>
+
+<h2>Bibliothèque</h2>
+<table width="100%">
+  <tr>
+    <th align="left">Id</th>
+    <th align="left">Titre</th>
+    <th align="left">Date emprunt</th>
+    <th align="left">Actions</th>
+  </tr>
+  <% for (const book of books){ %>
+    <tr>
+      <td><%= book.Id %></td>
+      <td><%= book.Titre %></td>
+      <td><%= book.DateEmprunt.getDate() %>/
+        <%= book.DateEmprunt.getMonth()+1 %>/
+        <%= book.DateEmprunt.getFullYear() %></td>
+        <td><%= book.EstEmpruntee %></td>
+      </tr>
+    <% } %>
+</table>
+<%- include('footer') -%>
