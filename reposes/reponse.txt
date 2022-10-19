@@ -1,0 +1,18 @@
+## Partie 1
+
+### 1. NPM est un gestionnaire de paquets.
+### 2. La fonction next() sert à laisser le programme continuer son execution.
+### 3. On compare 2 mot de passe grâce la comparaison du mot de passe non crypté avec sa fonction de hashage pour vérifier si celle-ci correspont au mot de passe crypté avec la même fonction d'hashage. 
+### 4. Le middleware est un logiciel tiers.
+        Le middleware permet l'interaction, l'échange de données et la coopération entre application.
+### 5. On peut détruire une session avec une méthode destroy
+
+***
+
+## Partie 2
+
+On créer une base de donnée simple 
+
+table : Librairie
+colonnes : { Id: [primary key] [int], Titre [varchar], DateEmprunt [date], EstEmprunté [bool] }
+
