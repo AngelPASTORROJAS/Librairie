@@ -13,6 +13,6 @@
 
 On créer une base de donnée simple 
 
-table : Librairie
+table : librairies
 colonnes : { Id: [primary key] [INT 11] [NON NULL], Titre [VARCHAR 255] [NON NULL], DateEmprunt [DATE] [NULL], EstEmpruntee [BOOLEAN] [NULL] }
 
