@@ -11,8 +11,11 @@
 
 ## Partie 2
 
-On créer une base de donnée simple 
+1. On créer une base de donnée simple :
+        table : librairies
+        colonnes : { Id: [primary key] [INT 11] [NON NULL], Titre [VARCHAR 255] [NON NULL], DateEmprunt [DATE] [NULL], DateRetour [DATE] [NULL], EstEmpruntee [BOOLEAN] [NULL] }
 
-table : librairies
-colonnes : { Id: [primary key] [INT 11] [NON NULL], Titre [VARCHAR 255] [NON NULL], DateEmprunt [DATE] [NULL], EstEmpruntee [BOOLEAN] [NULL] }
 
+2. Lors d'un nouvel emprunt:
+        on initialise la DateEmprunt 
+        et on supprimme la DateRetour

@@ -1,23 +1,31 @@
 <%- include('header') -%>
 
 <h2>Bibliothèque</h2>
-<table width="100%">
+<table style="border-collapse: collapse;" width="100%">
   <tr>
     <th align="left">Id</th>
     <th align="left">Titre</th>
     <th align="left">Date emprunt</th>
-    <th align="left">Actions</th>
-  </tr>
+    <th>Actions</th>
+  </tr >
   <% for (const book of books){ %>
     <% let color = "green"%> 
-    <% if(book.EstEmpruntee){ color = "orange"}%> 
-    <tr>
-      <td bgcolor=<%= color %> ><%= book.Id %></td>
-      <td bgcolor=<%= color %> ><%= book.Titre %></td>
-      <td bgcolor=<%= color %> ><%= book.DateEmprunt.getDate() %>/
-        <%= book.DateEmprunt.getMonth()+1 %>/
-        <%= book.DateEmprunt.getFullYear() %></td>
-        <td bgcolor= <%= color %> ><%= book.EstEmpruntee %></td>
+    <% if(!book.EstDepassee&(book.EstEmpruntee)){ color = "orange"};%>
+    <% if(book.EstDepassee&(book.EstEmpruntee)){ color = "red"}%>
+    <tr style="border: 1pt solid darkgray" bgcolor=<%= color %> >
+      <td><%= book.Id %></td>
+      <td><%= book.Titre %></td>
+      <td><%= book.DateEmprunt.getDate() %>/<%= book.DateEmprunt.getMonth()+1 %>/<%= book.DateEmprunt.getFullYear() %></td>
+      <td align="center">
+        <% if(book.EstEmpruntee){ %>
+          <!-- si erreur de style décochez dans les paramètres (mac: [cmd]+[,]; windows: [ctrl]+[,] ) tel que
+             reponses/config_html_styl.png
+             https://stackoverflow.com/questions/57352156/error-property-value-expected-css-and-at-rule-or-selector-expected-css-editi -->
+          <button style="background-color: <%= color %>; border: 0px" class="material-icons">
+            check_circle
+          </button>
+          <% } %>
+      </td>
       </tr>
     <% } %>
 </table>
