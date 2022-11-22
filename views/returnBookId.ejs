@@ -1,0 +1,15 @@
+<% function returnBookId(id){ %>
+    <button  id="Rendu"
+    class="material-icons"
+    style="background-color: <%= color %>;"
+    onclick=<%= rendu %>(book.Id)>
+    <a href="">check_circle</a></button>
+<% } %>
+
+<% returnBook = function(id){ %>
+<% if(data){ %>
+    <ul>
+        <% data.map(returnBook) %>
+    </ul>
+<% } %>
+<% } %>

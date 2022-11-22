@@ -15,18 +15,25 @@
     <tr style="border: 1pt solid darkgray" bgcolor=<%= color %> >
       <td><%= book.Id %></td>
       <td><%= book.Titre %></td>
-      <td><%= book.DateEmprunt.getDate() %>/<%= book.DateEmprunt.getMonth()+1 %>/<%= book.DateEmprunt.getFullYear() %></td>
+      <td>
+        <% if(!!book.DateEmprunt){ %>
+          <%= book.DateEmprunt.getDate() %>/<%= book.DateEmprunt.getMonth()+1 %>/<%= book.DateEmprunt.getFullYear() %>
+        <% } %>
+      </td>
       <td align="center">
         <% if(book.EstEmpruntee){ %>
-          <!-- si erreur de style décochez dans les paramètres (mac: [cmd]+[,]; windows: [ctrl]+[,] ) tel que
-             reponses/config_html_styl.png
-             https://stackoverflow.com/questions/57352156/error-property-value-expected-css-and-at-rule-or-selector-expected-css-editi -->
-          <button style="background-color: <%= color %>; border: 0px" class="material-icons">
+          <button  id="Rendu"
+          class="material-icons"
+          style="background-color: <%= color %>;"
+          onclick=<%= rendu(book.Id)%>
+          ><a href="">
             check_circle
+          </a>
           </button>
           <% } %>
       </td>
       </tr>
     <% } %>
 </table>
+
 <%- include('footer') -%>
